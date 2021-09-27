@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'library',
+    'telegram_bot',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,10 @@ STATIC_ROOT = f'{BASE_DIR}/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Telegram
+
+TELEGRAM_SECRET = os.getenv('TELEGRAM_SECRET')
 
 try:
     from kas_library._settings import *  # noqa
