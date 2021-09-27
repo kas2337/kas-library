@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
+from accounts.serializers import UsersSerializer
 from .models import Article, Note, Tag
 
 
@@ -11,6 +12,7 @@ class TagsSerializer(ModelSerializer):
 
 class ArticlesSerializer(ModelSerializer):
     tag = TagsSerializer(read_only=True, many=True)
+    user = UsersSerializer()
 
     class Meta:
         model = Article
@@ -19,6 +21,7 @@ class ArticlesSerializer(ModelSerializer):
 
 class NotesSerializer(ModelSerializer):
     tag = TagsSerializer(read_only=True, many=True)
+    user = UsersSerializer()
 
     class Meta:
         model = Note
