@@ -131,3 +131,6 @@ dmypy.json
 
 # Django settings
 */_settings.py
+
+# Temp dirrectory
+temp
